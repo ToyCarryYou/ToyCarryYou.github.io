@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求到">
+  <meta name="description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/1.什么是GBK编码格式/index.html">
+<meta property="og:title" content="php后端表单验证">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/php后端表单验证/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求到">
+<meta property="og:description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-31T09:59:48.240Z">
+<meta property="og:updated_time" content="2019-05-31T10:49:54.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求到">
+<meta name="twitter:title" content="php后端表单验证">
+<meta name="twitter:description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/31/1.什么是GBK编码格式/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/php后端表单验证/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>php后端表单验证 | Hexo</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/1.什么是GBK编码格式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/php后端表单验证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">php后端表单验证
 
               
             
@@ -332,13 +332,9 @@
                 
               
 
-              <time title="Created: 2019-05-31 17:59:47 / Modified: 17:59:48" itemprop="dateCreated datePublished" datetime="2019-05-31T17:59:47+08:00">2019-05-31</time>
+              <time title="Created: 2019-05-31 18:49:54" itemprop="dateCreated datePublished" datetime="2019-05-31T18:49:54+08:00">2019-05-31</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -371,7 +367,7 @@
       
 
       
-        <p>1.什么是GBK编码格式<br>一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节<br>2.宽字节SQL注入的原理<br>宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入<br>例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞<br>宽字节注入就是PHP发送请求到MySql时使用了语句<br>SET NAMES ‘gbk’或是SET character_set_client=gbk进行了一次编码，但又由于一些不经意的字符集转换导致了宽字节的注入<br>函数引入<br>magic_quotes_gpc（魔术引导开关）<br>作用：当php的传参中有特殊字符就会在前面加转义字符“\”来做一定的过滤<br>我们发现\的编码是%5c，“運”的gbk编码为%df%5c<br>可以用%df吃掉%5c，让单引号闭合逃逸转义字符</p>
+        <p>1.什么是表单？<br>负责数据采集功能<br>三个基本-表单标签<br>        -表单域<br>        -表单控制<br>2.表单属性<br>属性         值         描述<br>action       URL        表单提交目的地<br>method       GET        最佳性，内容短，URL直显<br>             POST       性能低，内容多，无直接显示<br>target       _blank     新窗口打开<br>             _self      默认，同框架打开<br>             _parent    父框架打开<br>             _top       整窗口打开<br>3.语法解析<br>var_dump：查看变量并返回值<br>die()：输出一条消息并退出当前脚本<br>strlen：判断字符串长度是否为0<br>mysqli_query：执行语句<br>mysqli_fetch：遍历语句</p>
 
       
     </div>
@@ -402,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/正则表达式/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/05/31/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -470,7 +466,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
