@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
+  <meta name="description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php后端表单验证">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/php后端表单验证/index.html">
+<meta property="og:title" content="POST,Head注入">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/postHead注入/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
+<meta property="og:description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-31T10:49:54.087Z">
+<meta property="og:updated_time" content="2019-05-31T11:10:37.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php后端表单验证">
-<meta name="twitter:description" content="1.什么是表单？负责数据采集功能三个基本-表单标签        -表单域        -表单控制2.表单属性属性         值         描述action       URL        表单提交目的地method       GET        最佳性，内容短，URL直显             POST       性能低，内容多，无直接显示target       _bl">
+<meta name="twitter:title" content="POST,Head注入">
+<meta name="twitter:description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/31/php后端表单验证/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/postHead注入/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>php后端表单验证 | Hexo</title>
+  <title>POST,Head注入 | Hexo</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/php后端表单验证/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/postHead注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">php后端表单验证
+          <h1 class="post-title" itemprop="name headline">POST,Head注入
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-05-31 18:49:54" itemprop="dateCreated datePublished" datetime="2019-05-31T18:49:54+08:00">2019-05-31</time>
+              <time title="Created: 2019-05-31 19:10:37" itemprop="dateCreated datePublished" datetime="2019-05-31T19:10:37+08:00">2019-05-31</time>
             
 
             
@@ -367,7 +367,9 @@
       
 
       
-        <p>1.什么是表单？<br>负责数据采集功能<br>三个基本-表单标签<br>        -表单域<br>        -表单控制<br>2.表单属性<br>属性         值         描述<br>action       URL        表单提交目的地<br>method       GET        最佳性，内容短，URL直显<br>             POST       性能低，内容多，无直接显示<br>target       _blank     新窗口打开<br>             _self      默认，同框架打开<br>             _parent    父框架打开<br>             _top       整窗口打开<br>3.语法解析<br>var_dump：查看变量并返回值<br>die()：输出一条消息并退出当前脚本<br>strlen：判断字符串长度是否为0<br>mysqli_query：执行语句<br>mysqli_fetch：遍历语句</p>
+        <p>####1.POST注入介绍<br>post注入高危点<br>登录框<br>查询框<br>等各种与数据库有交互的地方<br>万能密码<br>‘or 1=1#<br>单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释</p>
+<p>####2.Head注入介绍<br>php全局变量-超全局变量<br>一个脚本的全部作用域使用<br>$_REQUEST<br>$_POST<br>$_GET<br>$_COOKIE<br>$_SERVER功能强大</p>
+<p>#Head注入原理<br>通过服务器存储的请求头抓包查询<br>引入函数<br>updatexml()更新xml文档的函数<br>updatexml(1,concat(0x7e,(select database()),0x7e),1)<br>在更新XML文档，但是写入了子查询，因为符号输入不符合规则所以报错，但已经执行了子查询代码<br>select updatexml(1,concat(0x7e,(select password from admin limit 0,1)),1);<br>报出数据库密码</p>
 
       
     </div>
@@ -398,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/31/sql注入原理分析/" rel="next" title="sql注入原理分析">
+                <i class="fa fa-chevron-left"></i> sql注入原理分析
               </a>
             
           </div>
@@ -407,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/31/正则表达式/" rel="prev" title="正则表达式">
-                正则表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
