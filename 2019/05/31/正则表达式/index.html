@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="后端基础php-正则表达式1.什么是正则表达式正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。特点：灵活性，逻辑性非常强；可以迅速用极简单的方式达到字符串的复杂控制；对于刚接触的人来说，比较晦涩难懂；用途：判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。2.正则表达式的语法3.php中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/正则表达式/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="后端基础php-正则表达式1.什么是正则表达式正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。特点：灵活性，逻辑性非常强；可以迅速用极简单的方式达到字符串的复杂控制；对于刚接触的人来说，比较晦涩难懂；用途：判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。2.正则表达式的语法3.php中">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T10:53:38.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="后端基础php-正则表达式1.什么是正则表达式正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。特点：灵活性，逻辑性非常强；可以迅速用极简单的方式达到字符串的复杂控制；对于刚接触的人来说，比较晦涩难懂；用途：判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。2.正则表达式的语法3.php中">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/正则表达式/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>正则表达式 | Hexo</title>
   
 
 
@@ -168,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -269,9 +272,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,10 +306,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/正则表达式/" class="post-title-link" itemprop="url">正则表达式</a>
+          <h1 class="post-title" itemprop="name headline">正则表达式
+
               
             
           </h1>
@@ -366,9 +367,7 @@
       
 
       
-        
-          
-            <p>后端基础php-正则表达式<br>1.什么是正则表达式<br>正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。<br>特点：<br>灵活性，逻辑性非常强；<br>可以迅速用极简单的方式达到字符串的复杂控制；<br>对于刚接触的人来说，比较晦涩难懂；<br>用途：<br>判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。<br>从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。<br>2.正则表达式的语法<br>3.php中的正则表达式</p>
+        <p>后端基础php-正则表达式<br>1.什么是正则表达式<br>正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。<br>特点：<br>灵活性，逻辑性非常强；<br>可以迅速用极简单的方式达到字符串的复杂控制；<br>对于刚接触的人来说，比较晦涩难懂；<br>用途：<br>判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。<br>从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。<br>2.正则表达式的语法<br>3.php中的正则表达式</p>
 <p>#常用转义字符：<br>数字：\d<br>非数字：\D<br>空白字符（空格，制表符，换页符等）：\s<br>非空白字符：\S<br>制表符：\t<br>回车符：\r<br>换行符：\n<br>单词字符（26个英文字母+数字+下划线）：\w<br>非单词字符：\W</p>
 <p>#自定义字符结合<br>字符集合：[单个字符或字符区间]，用于匹配集合内字符<br>如：<br>[a-z]表示a-z这26个小写字母<br>[0-9a-z]表示0-9这10个数字和a-za26个小写字母<br>[135a-h]表示包含数字1，3，5和数字a-h这8个字母<br>注意：两个不同字符段间请勿使用.隔开<br>非集：[^单个字符或字符区间]，用于匹配非集合内字符。<br>如：<br>[^0-9]表示匹配所有非数字字符<br>[^a-zA-Z]表示匹配所有非字母字符<br>正则表达式语法-关键字<br>特别字符<br>元字符</p>
 <p>描述<br>\</p>
@@ -417,8 +416,6 @@
 <p>小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。中括号内的“P”表示Unicode 字符集七个字符属性之一：标点字符。<br>其他六个属性：<br>L：字母；<br>M：标记符号（一般不会单独出现）；<br>Z：分隔符（比如空格、换行等）；<br>S：符号（比如数学符号、货币符号等）；<br>N：数字（比如阿拉伯数字、罗马数字等）；<br>C：其他字符。<br>*注：此语法部分语言不支持，例：javascript。<br>&lt;<br>&gt;<br>    匹配词（word）的开始（&lt;）和结束（&gt;）。例如正则表达式&lt;the&gt;能够匹配字符串”for the wise”中的”the”，但是不能匹配字符串”otherwise”中的”the”。注意：这个元字符不是所有的软件都支持的。<br>( )    将( 和 ) 之间的表达式定义为“组”（group），并且将匹配这个表达式的字符保存到一个临时区域（一个正则表达式中最多可以保存9个），它们可以用 \1 到\9 的符号来引用。<br>|    将两个匹配条件进行逻辑“或”（Or）运算。例如正则表达式(him|her) 匹配”it belongs to him”和”it belongs to her”，但是不能匹配”it belongs to them.”。注意：这个元字符不是所有的软件都支持的。</p>
 <p>#php中使用正则一定要加/<br>python与java不需要</p>
 
-          
-        
       
     </div>
 
@@ -441,151 +438,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/php后端表单验证/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/php后端表单验证/" class="post-title-link" itemprop="url">php后端表单验证</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/05/31/php后端表单验证/" rel="next" title="php后端表单验证">
+                <i class="fa fa-chevron-left"></i> php后端表单验证
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-31 18:49:54" itemprop="dateCreated datePublished" datetime="2019-05-31T18:49:54+08:00">2019-05-31</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>1.什么是表单？<br>负责数据采集功能<br>三个基本-表单标签<br>        -表单域<br>        -表单控制<br>2.表单属性<br>属性         值         描述<br>action       URL        表单提交目的地<br>method       GET        最佳性，内容短，URL直显<br>             POST       性能低，内容多，无直接显示<br>target       _blank     新窗口打开<br>             _self      默认，同框架打开<br>             _parent    父框架打开<br>             _top       整窗口打开<br>3.语法解析<br>var_dump：查看变量并返回值<br>die()：输出一条消息并退出当前脚本<br>strlen：判断字符串长度是否为0<br>mysqli_query：执行语句<br>mysqli_fetch：遍历语句</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -595,165 +469,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-31 17:32:35" itemprop="dateCreated datePublished" datetime="2019-05-31T17:32:35+08:00">2019-05-31</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -948,6 +672,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -963,6 +691,8 @@
 
   
 
+
+  
 
 
   
