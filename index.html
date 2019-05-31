@@ -286,6 +286,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/盲注/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/31/盲注/" class="post-title-link" itemprop="url">盲注</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-31 19:13:55" itemprop="dateCreated datePublished" datetime="2019-05-31T19:13:55+08:00">2019-05-31</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>####1.盲注介绍<br>所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。</p>
+<p><strong>布尔盲注</strong><br>布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息</p>
+<p><strong>时间盲注</strong><br>界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确</p>
+<p>####2.盲注需要掌握的几个函数<br>length()函数 返回字符串的长度<br>select length(‘Hello’)<br>返回值5<br>substr()截取字符串（语法：SUBSTR(str,pos,len);）<br>select substr(‘hello’,2,1)<br>将截取hello，从哪一位开始截取（负数则从后往前截取），截取长度<br>返回值e<br>若截取值超过则将全显<br>ascii()返回字符串的ascii码<br>sleep()将程序挂一段时间n为n秒<br>select ascii(‘a’) and sleep(10)<br>if(expr1,expr2,expr3)判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句<br>先判断数据库字符串长度，再用ascii码截取每一个字符，根据最终判定的ascii码确定字母，依次得出库名<br>或者用burp的爆破功能</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/postHead注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1224,7 +1366,7 @@ C段：确定ip的范围，然后对其段内的ip主机进行信息收集<br>�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
