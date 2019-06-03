@@ -286,6 +286,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/Accsess注入-偏移注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/03/Accsess注入-偏移注入/" class="post-title-link" itemprop="url">Accsess注入-偏移注入</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-03 19:30:40" itemprop="dateCreated datePublished" datetime="2019-06-03T19:30:40+08:00">2019-06-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-偏移注入使用场景"><a href="#1-偏移注入使用场景" class="headerlink" title="1.偏移注入使用场景"></a>1.偏移注入使用场景</h4><p>并不仅仅用于accssess,sql也可以使用<br>在sql注入的时候会遇到一些无法查询列名的问题，比如系统数据库带的权限不够而无法访问系统自带库<br>accsess不存在系统自带库，则无法知道字段名<br>联合查询必须字段相同<br>当猜到表名无法猜到字段的情况下，我们可以使用偏移注入来查询那张表里面的数据<br>像sqlmap之类的工具其实是爆破字段的名字，但是如果字段名字比较奇葩，例如：H5scker_Passwd之类的就无可奈何了<br>工具爆破即为穷举<br>引入知识<br>table_name.*
+实际上是指表名.*
+<em>就是通配符<br>数据库中表名.</em><br>则为那个表中所有字段<br>在mysql中<br>select * from admin = select id,a,b from admin<br>=select admin.* from admin<br>将下列句子尝试改为<br>select * from admin where id=1 and 1=2 union select 1,2,3,4,<del>5</del>admin.* from admin<br>回显报错<br>因为前面的数字也为字段<br>我们将前面的数字删除<br>select 1,2 admin.* from<br>将所有数据成功输出（尽管不知道字段名）<br>偏移注入条件为：第一张表的字段比第二张表多（越多越好）</p>
+<h4 id="2-偏移注入步骤"><a href="#2-偏移注入步骤" class="headerlink" title="2.偏移注入步骤"></a>2.偏移注入步骤</h4><p>（1）判断注入点<br>（2）order by 判断字段数<br>（3）判断表名 可通过sqlmap爆破<br>（4）联合查询<br>（5）获取表中列数，知道存在几列以及输出点<br>（6）开始偏移注入</p>
+<h4 id="3-靶场讲解"><a href="#3-靶场讲解" class="headerlink" title="3.靶场讲解"></a>3.靶场讲解</h4><p>先通过cookie注入<br>document.cookie=”id=”+escape(“105 order by 26”);<br>写27报错说明有26个字段<br>document.cookie=”id=”+escape(“105+union+select+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26+from+admin”);<br>accsess要加from admin（一般存在admin表名可以直接用）<br>页面报错3 5 7<br>我们将26改成admin.*
+页面报错则将字段删除末尾一个往前移<br>退到16时，将16改为admin.*,后接上所有字段<br>页面则回显密码<br>我们查看源码可发现图片的图片值里有一个隐藏输入点</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/宽字节注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1509,7 +1653,7 @@ C段：确定ip的范围，然后对其段内的ip主机进行信息收集<br>�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
