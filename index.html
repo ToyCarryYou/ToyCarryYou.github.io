@@ -286,6 +286,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/宽字节注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/03/宽字节注入/" class="post-title-link" itemprop="url">宽字节注入</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-03 16:17:15" itemprop="dateCreated datePublished" datetime="2019-06-03T16:17:15+08:00">2019-06-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="1-什么是GBK编码格式"><a href="#1-什么是GBK编码格式" class="headerlink" title="1.什么是GBK编码格式"></a>1.什么是GBK编码格式</h5><p>一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节</p>
+<h5 id="2-宽字节SQL注入的原理"><a href="#2-宽字节SQL注入的原理" class="headerlink" title="2.宽字节SQL注入的原理"></a>2.宽字节SQL注入的原理</h5><p>宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入<br>例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞<br>宽字节注入就是PHP发送请求到MySql时使用了语句<br>SET NAMES ‘gbk’或是SET character_set_client=gbk进行了一次编码，但又由于一些不经意的字符集转换导致了宽字节的注入<br>函数引入<br>magic_quotes_gpc（魔术引导开关）<br>作用：当php的传参中有特殊字符就会在前面加转义字符“\”来做一定的过滤<br>我们发现\的编码是%5c，“運”的gbk编码为%df%5c<br>可以用%df吃掉%5c，让单引号闭合逃逸转义字符<br>ps：只有国内网站使用gbk编码，国外网站基本不用考虑<br>解读编码为分段解读<br>防止宽字节注入：将数据库编码改为utf-8</p>
+<h6 id="注入实操"><a href="#注入实操" class="headerlink" title="注入实操"></a>注入实操</h6><p><strong>1.?id=1’</strong><br>反斜杠将代码转义为字符串<br><strong>2.在?id=1’后加上%df</strong><br>将反斜杠吃掉，成功写入注入语句<br>有可能遇到的问题<br>指定系统自带库的表名库名时单引号被转义<br>如果继续拼接%df，则为<br>union select 1,2,運’a運’<br>数据库无法理解则报错<br>可以将%df和查询语句写成16进制<br>sql语句支持16进制的输入（加上0*，以区分字符串与进制语法）</p>
+<p>课外小知识<br><strong>burp的使用方法</strong><br>第一，网页浏览痕迹，与爬虫息息相关<br>第二，抓包放包。可通过options修改配置，例如端口<br>抓包之后可尝试进行修改。forward为放入，dorp为丢弃<br>右键空白内容有很多功能，可自行实践或者百度<br>通过修改返回包可以修改页面<br>第三，网络爬虫模块。将抓到的包发给蜘蛛爬虫，可以爬取到子站甚至后台。<br>第四，爆破模块（intruder）将数据包发送至爆破模块。<br>百度：github爆破字典合集，可自行生成社工字典<br>编码错误在User options Display 里面修改</p>
+<p>找到网站后台先查看是否存在防爬取<br>操作：在网站后输入/robots.txt<br>如果存在则有可能有后台<br>或者输入admin   admin.asp   admin.php<br>或用谷歌语法找后台：site:sjtu.edu.cn后台</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/盲注/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1366,7 +1509,7 @@ C段：确定ip的范围，然后对其段内的ip主机进行信息收集<br>�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
