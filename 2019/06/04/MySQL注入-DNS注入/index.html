@@ -96,17 +96,25 @@
 
 
 
-  <meta name="description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节 2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求">
+  <meta name="description" content="1.DNSLOG的函数解析LOAD_FILE 读取文件的函数读取文件并返回文件内容为字符串。要使用此函数，文件必须位于服务器主机上，必须指定完整路径的文件，而且必须有FILE权限，该文件所有字节可读，但文件内容必须小于max_allowed_packer（限制server接受的数据包大小的函数，默认1MB）。如果该文件不存在或无法读取，因为前面的条件之一不满足，函数返回NULL.在cmd中读取文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="宽字节注入">
-<meta property="og:url" content="http://yoursite.com/2019/06/03/宽字节注入/index.html">
+<meta property="og:title" content="MySQL注入-DNS注入">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/MySQL注入-DNS注入/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节 2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求">
+<meta property="og:description" content="1.DNSLOG的函数解析LOAD_FILE 读取文件的函数读取文件并返回文件内容为字符串。要使用此函数，文件必须位于服务器主机上，必须指定完整路径的文件，而且必须有FILE权限，该文件所有字节可读，但文件内容必须小于max_allowed_packer（限制server接受的数据包大小的函数，默认1MB）。如果该文件不存在或无法读取，因为前面的条件之一不满足，函数返回NULL.在cmd中读取文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-03T08:17:15.572Z">
+<meta property="og:image" content="http://yoursite.com/.com//1.png">
+<meta property="og:image" content="http://yoursite.com/.com//2.png">
+<meta property="og:image" content="http://yoursite.com/.com//3.png">
+<meta property="og:image" content="http://yoursite.com/.com//4.png">
+<meta property="og:image" content="http://yoursite.com/.com//5.png">
+<meta property="og:image" content="http://yoursite.com/.com//6.png">
+<meta property="og:image" content="http://yoursite.com/.com//7.png">
+<meta property="og:updated_time" content="2019-06-05T08:19:23.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="宽字节注入">
-<meta name="twitter:description" content="1.什么是GBK编码格式一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节 2.宽字节SQL注入的原理宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞宽字节注入就是PHP发送请求">
+<meta name="twitter:title" content="MySQL注入-DNS注入">
+<meta name="twitter:description" content="1.DNSLOG的函数解析LOAD_FILE 读取文件的函数读取文件并返回文件内容为字符串。要使用此函数，文件必须位于服务器主机上，必须指定完整路径的文件，而且必须有FILE权限，该文件所有字节可读，但文件内容必须小于max_allowed_packer（限制server接受的数据包大小的函数，默认1MB）。如果该文件不存在或无法读取，因为前面的条件之一不满足，函数返回NULL.在cmd中读取文件">
+<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
 
 
 
@@ -114,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/03/宽字节注入/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/04/MySQL注入-DNS注入/">
 
 
 
@@ -124,7 +132,7 @@
   };
 </script>
 
-  <title>宽字节注入 | Hexo</title>
+  <title>MySQL注入-DNS注入 | Hexo</title>
   
 
 
@@ -289,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/03/宽字节注入/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/MySQL注入-DNS注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">宽字节注入
+          <h1 class="post-title" itemprop="name headline">MySQL注入-DNS注入
 
               
             
@@ -332,9 +340,25 @@
                 
               
 
-              <time title="Created: 2019-06-03 16:17:15" itemprop="dateCreated datePublished" datetime="2019-06-03T16:17:15+08:00">2019-06-03</time>
+              <time title="Created: 2019-06-04 17:40:17" itemprop="dateCreated datePublished" datetime="2019-06-04T17:40:17+08:00">2019-06-04</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-05 16:19:23" itemprop="dateModified" datetime="2019-06-05T16:19:23+08:00">2019-06-05</time>
+              
             
           </span>
 
@@ -367,11 +391,9 @@
       
 
       
-        <h5 id="1-什么是GBK编码格式"><a href="#1-什么是GBK编码格式" class="headerlink" title="1.什么是GBK编码格式"></a>1.什么是GBK编码格式</h5><p>一种多字符编码，使用双字节编码方案，GBK汉子占2字节，UTF-8占3字节</p>
-<h5 id="2-宽字节SQL注入的原理"><a href="#2-宽字节SQL注入的原理" class="headerlink" title="2.宽字节SQL注入的原理"></a>2.宽字节SQL注入的原理</h5><p>宽字节SQL注入主要是源于程序员设置数据库编码非英文编码那么就有可能产生宽字节注入<br>例如说MySql的编码设置为了SET NAMES ‘gbk’或是SET character_set_client = gbk,这样配置引发编码转换从而导致的注入漏洞<br>宽字节注入就是PHP发送请求到MySql时使用了语句<br>SET NAMES ‘gbk’或是SET character_set_client=gbk进行了一次编码，但又由于一些不经意的字符集转换导致了宽字节的注入<br>函数引入<br>magic_quotes_gpc（魔术引导开关）<br>作用：当php的传参中有特殊字符就会在前面加转义字符“\”来做一定的过滤<br>我们发现\的编码是%5c，“運”的gbk编码为%df%5c<br>可以用%df吃掉%5c，让单引号闭合逃逸转义字符<br>ps：只有国内网站使用gbk编码，国外网站基本不用考虑<br>解读编码为分段解读<br>防止宽字节注入：将数据库编码改为utf-8</p>
-<h6 id="注入实操"><a href="#注入实操" class="headerlink" title="注入实操"></a>注入实操</h6><p><strong>1.?id=1’</strong><br>反斜杠将代码转义为字符串<br><strong>2.在?id=1’后加上%df</strong><br>将反斜杠吃掉，成功写入注入语句<br>有可能遇到的问题<br>指定系统自带库的表名库名时单引号被转义<br>如果继续拼接%df，则为<br>union select 1,2,運’a運’<br>数据库无法理解则报错<br>可以将%df和查询语句写成16进制<br>sql语句支持16进制的输入（加上0*，以区分字符串与进制语法）</p>
-<p>课外小知识<br><strong>burp的使用方法</strong><br>第一，网页浏览痕迹，与爬虫息息相关<br>第二，抓包放包。可通过options修改配置，例如端口<br>抓包之后可尝试进行修改。forward为放入，dorp为丢弃<br>右键空白内容有很多功能，可自行实践或者百度<br>通过修改返回包可以修改页面<br>第三，网络爬虫模块。将抓到的包发给蜘蛛爬虫，可以爬取到子站甚至后台。<br>第四，爆破模块（intruder）将数据包发送至爆破模块。<br>百度：github爆破字典合集，可自行生成社工字典<br>编码错误在User options Display 里面修改</p>
-<p>找到网站后台先查看是否存在防爬取<br>操作：在网站后输入/robots.txt<br>如果存在则有可能有后台<br>或者输入admin   admin.asp   admin.php<br>或用谷歌语法找后台：site:sjtu.edu.cn后台</p>
+        <h4 id="1-DNSLOG的函数解析"><a href="#1-DNSLOG的函数解析" class="headerlink" title="1.DNSLOG的函数解析"></a>1.DNSLOG的函数解析</h4><p>LOAD_FILE 读取文件的函数<br>读取文件并返回文件内容为字符串。要使用此函数，文件必须位于服务器主机上，必须指定完整路径的文件，而且必须有FILE权限，该文件所有字节可读，但文件内容必须小于max_allowed_packer（限制server接受的数据包大小的函数，默认1MB）。如果该文件不存在或无法读取，因为前面的条件之一不满足，函数返回NULL.<br>在cmd中读取文件<br>select load_file(‘c:/1.txt);<br>成功回显文件内容<br>只能读取绝对路径，其实可以读取远程文件<br>当我们共享了一个文件出去，后可看到文件路径发生改变。但处于同一个内网时，可以读取到同一网络下的文件。<br>\\的意义<br>\是转义字符很明显这里是转义两个反斜杠\（两个字符串的反斜杠）<br>这里引入UNC路径概念<br>UNC路径<br>通用命名规则（也称通用命名规范，通用命名约定）<br><strong>（1）什么是UNC路径</strong><br>UNC路径就是类似\softer这样形式的网络路径。他符合\servername\shearename格式，其中servername是服务器名，sharename是共享资源的名称<br>目录或文件的UNC名称可以包括共享名称下的目录路径，格式为：\servernane\diretory\filename<br>（2）例如softer计算机的名为it168的共享文件夹，用UNC表示就是\softer\it168我们熟悉的命令行访问法访问网上邻居，实际上应该称作UNC路径访问法<br>当我们在cmd中输入<br>select load_file(‘////baa.baidu.com//que’);<br>页面经过一定时间回显NULL<br>说明它确实会去访问这个域名而不是不可执行<br>此时会对dns发送请求，然后DNS将域名解析成IP返回给你<br>当我们自己搭建了一台DNS服务器时，如果访问某个网页，则会在服务器里留下记录。他人的访问也相同。由此，我们可以做一个字符串拼接<br><img src="/.com//1.png" alt="拼接字符"><br>优先执行小括号语句，即子查询语句<br>则会将查询语句结果拼接入域名<br>直接在服务器查看访问记录即可得到查询结果<br>由此可使得盲注变为显错注入<br><strong>一句话概括：通过LOAD_FILE函数读取UNC路径的远程共享文件，拼接函数将想要获得的东西做一个子查询，然后拼接到域名中，通过DNS记录的日志可直接查看。</strong><br>可以通过DNS服务器平台实现此功能<br><a href="http://ceye.io免费dnslog平台" target="_blank" rel="noopener">http://ceye.io免费dnslog平台</a><br><img src="/.com//2.png" alt="知道创宇"><br>通过平台给你的域名，当它被访问则会被记录<br><img src="/.com//3.png" alt="ping此域名"><br><img src="/.com//4.png" alt="平台留下记录"><br><img src="/.com//5.png" alt="拼接平台所给连接"><br>记录回显maoshe.域名<br>再写入select password from admin where id=1<br>直接爆出密码</p>
+<h4 id="2-DNSLOG的使用场景"><a href="#2-DNSLOG的使用场景" class="headerlink" title="2.DNSLOG的使用场景"></a>2.DNSLOG的使用场景</h4><p>在某些无法直接利用漏洞获取回显的情况下，但是目标可发起DNS请求，这个时候就可以通过DNSlog把想获得的数据带出来。<br>对于sql盲注，常见的方法就是二分法一个个猜，但是较为麻烦且容易因为数据请求频繁导致被ban<br>所以可以将select得到的数据发送给一个url，利用DNS解析产生的日志来查看数据</p>
+<h4 id="3-DNSLOG靶场讲解"><a href="#3-DNSLOG靶场讲解" class="headerlink" title="3.DNSLOG靶场讲解"></a>3.DNSLOG靶场讲解</h4><p>正常注入，当我们输入语句<br>？id = 1 and 1 = 2<br>此时遇到一个安全狗<br>方法讲解<br>因为对php进行了传参而被拦截，那么我们可以尝试对图片等其他不会被解析的文件进行传参。因为这个版本的安全狗默认这些是安全的所以不会进行拦截<br>根据apache解析特性，他遇到无法识别或是没有存储的就会往前解析。<br>则可改语句为1.txt<br>当没有访问到1.txt的情况下就会直接访问之前的文件<br><img src="/.com//6.png" alt="回显"><br>输入1.txt？id=1<br>还是在对index.php进行传参<br>然后进行DNS注入<br><img src="/.com//7.png" alt="语句"><br>最好加上#以防对之前的语句造成干扰<br>当页面在loading时则说明在访问<br>若及时回显及出了问题<br>此方法只能返回单行数据</p>
 
       
     </div>
@@ -402,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/盲注/" rel="next" title="盲注">
-                <i class="fa fa-chevron-left"></i> 盲注
+              <a href="/2019/06/03/Accsess注入-偏移注入/" rel="next" title="Accsess注入-偏移注入">
+                <i class="fa fa-chevron-left"></i> Accsess注入-偏移注入
               </a>
             
           </div>
@@ -411,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/03/Accsess注入-偏移注入/" rel="prev" title="Accsess注入-偏移注入">
-                Accsess注入-偏移注入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-什么是GBK编码格式"><span class="nav-number">1.</span> <span class="nav-text">1.什么是GBK编码格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-宽字节SQL注入的原理"><span class="nav-number">2.</span> <span class="nav-text">2.宽字节SQL注入的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#注入实操"><span class="nav-number">2.1.</span> <span class="nav-text">注入实操</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-DNSLOG的函数解析"><span class="nav-number">1.</span> <span class="nav-text">1.DNSLOG的函数解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-DNSLOG的使用场景"><span class="nav-number">2.</span> <span class="nav-text">2.DNSLOG的使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-DNSLOG靶场讲解"><span class="nav-number">3.</span> <span class="nav-text">3.DNSLOG靶场讲解</span></a></li></ol></div>
             
 
           </div>
