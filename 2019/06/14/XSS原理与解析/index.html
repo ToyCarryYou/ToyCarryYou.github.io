@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="title:XSS的原理与解析1.XSS的原理和特性（1）什么是XSS就是HTML代码注入（2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问">
+  <meta name="description" content="1.XSS的原理和特性（1）什么是XSS就是HTML代码注入 12  （2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="XSS的原理与解析">
 <meta property="og:url" content="http://yoursite.com/2019/06/14/XSS原理与解析/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title:XSS的原理与解析1.XSS的原理和特性（1）什么是XSS就是HTML代码注入（2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问">
+<meta property="og:description" content="1.XSS的原理和特性（1）什么是XSS就是HTML代码注入 12  （2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-14T11:31:15.572Z">
+<meta property="og:updated_time" content="2019-06-14T11:38:17.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title:XSS的原理与解析1.XSS的原理和特性（1）什么是XSS就是HTML代码注入（2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问">
+<meta name="twitter:title" content="XSS的原理与解析">
+<meta name="twitter:description" content="1.XSS的原理和特性（1）什么是XSS就是HTML代码注入 12  （2）XSS主要拼接的什么xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句（3）XSS能做什么盗取内网IP盗取cookie（最频繁）获取浏览器保存的明文密码截取网页屏幕网页上的键盘记录（4）XSS类型反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>XSS的原理与解析 | Hexo</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">XSS的原理与解析
 
               
             
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-06-14 19:25:48 / Modified: 19:31:15" itemprop="dateCreated datePublished" datetime="2019-06-14T19:25:48+08:00">2019-06-14</time>
+              <time title="Created: 2019-06-14 19:25:48 / Modified: 19:38:17" itemprop="dateCreated datePublished" datetime="2019-06-14T19:25:48+08:00">2019-06-14</time>
             
 
             
@@ -371,8 +371,14 @@
       
 
       
-        <hr>
-<h2 id="title-XSS的原理与解析"><a href="#title-XSS的原理与解析" class="headerlink" title="title:XSS的原理与解析"></a>title:XSS的原理与解析</h2><h4 id="1-XSS的原理和特性"><a href="#1-XSS的原理和特性" class="headerlink" title="1.XSS的原理和特性"></a>1.XSS的原理和特性</h4><p>（1）什么是XSS<br>就是HTML代码注入<br>（2）XSS主要拼接的什么<br>xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句<br>（3）XSS能做什么<br>盗取内网IP<br>盗取cookie（最频繁）<br>获取浏览器保存的明文密码<br>截取网页屏幕<br>网页上的键盘记录<br>（4）XSS类型<br>反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻击）<br>存储型（提交的数据成功实现了xss，存入数据库，别人访问这个页面的时候就会自动触发）<br>DOM型<br>检测是否存在xss<br>一般是想办法让浏览器弹窗（alert）最经典的弹窗语句:<script>alert(1)</script><br>这里需要带有post或者get传参<br>xss执行的为JS语句，一般需要构建<script></script><br>其他方法<br>javascript:alert(1)（经典代码<a herf="javascript:alert(1)">test</a>）
+        <h4 id="1-XSS的原理和特性"><a href="#1-XSS的原理和特性" class="headerlink" title="1.XSS的原理和特性"></a>1.XSS的原理和特性</h4><p>（1）什么是XSS<br>就是HTML代码注入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（2）XSS主要拼接的什么<br>xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句<br>（3）XSS能做什么<br>盗取内网IP<br>盗取cookie（最频繁）<br>获取浏览器保存的明文密码<br>截取网页屏幕<br>网页上的键盘记录<br>（4）XSS类型<br>反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻击）<br>存储型（提交的数据成功实现了xss，存入数据库，别人访问这个页面的时候就会自动触发）<br>DOM型<br>检测是否存在xss<br>一般是想办法让浏览器弹窗（alert）最经典的弹窗语句:</p>
+<script>alert(1)</script>
+
+
+<p>这里需要带有post或者get传参<br>xss执行的为JS语句，一般需要构建<script></script><br>其他方法<br>javascript:alert(1)（经典代码<a herf="javascript:alert(1)">test</a>）
 javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实存在的协议，如http://,https://,ftp://<br>伪协议只有关联应能够用比如php:// tencent://（关联QQ）<br>javascript:伪协议实际上声明了URL的主体是任意的javascript代码<br>事件也是可以执行JS的：<br>例如：onerror=alert(1) 在加载文档或图像时发生错误<br>该句的意思是在加载文档或图像时发生错误然后会执行alert(1)<br>类似的事情有很多<br>常用的有 onerror,onload（成功加载执行）<br>oninput（有输入框，输入的时候触发）</p>
 <h4 id="2-反射型XSS靶场演示"><a href="#2-反射型XSS靶场演示" class="headerlink" title="2.反射型XSS靶场演示"></a>2.反射型XSS靶场演示</h4><p>先在XSS平台上注册一个账号，在项目创建选择默认和xss功能。</p>
 
@@ -405,8 +411,8 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/14/Oracle/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/06/14/Oracle/" rel="next" title="Oracle注入-报错注入">
+                <i class="fa fa-chevron-left"></i> Oracle注入-报错注入
               </a>
             
           </div>
@@ -524,7 +530,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-XSS的原理与解析"><span class="nav-number">1.</span> <span class="nav-text">title:XSS的原理与解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-XSS的原理和特性"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.XSS的原理和特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-反射型XSS靶场演示"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.反射型XSS靶场演示</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-XSS的原理和特性"><span class="nav-number">1.</span> <span class="nav-text">1.XSS的原理和特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-反射型XSS靶场演示"><span class="nav-number">2.</span> <span class="nav-text">2.反射型XSS靶场演示</span></a></li></ol></div>
             
 
           </div>

@@ -306,7 +306,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/14/XSS原理与解析/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/06/14/XSS原理与解析/" class="post-title-link" itemprop="url">XSS的原理与解析</a>
               
             
           </h1>
@@ -331,7 +331,7 @@
                 
               
 
-              <time title="Created: 2019-06-14 19:25:48 / Modified: 19:31:15" itemprop="dateCreated datePublished" datetime="2019-06-14T19:25:48+08:00">2019-06-14</time>
+              <time title="Created: 2019-06-14 19:25:48 / Modified: 19:38:17" itemprop="dateCreated datePublished" datetime="2019-06-14T19:25:48+08:00">2019-06-14</time>
             
 
             
@@ -372,8 +372,14 @@
       
         
           
-            <hr>
-<h2 id="title-XSS的原理与解析"><a href="#title-XSS的原理与解析" class="headerlink" title="title:XSS的原理与解析"></a>title:XSS的原理与解析</h2><h4 id="1-XSS的原理和特性"><a href="#1-XSS的原理和特性" class="headerlink" title="1.XSS的原理和特性"></a>1.XSS的原理和特性</h4><p>（1）什么是XSS<br>就是HTML代码注入<br>（2）XSS主要拼接的什么<br>xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句<br>（3）XSS能做什么<br>盗取内网IP<br>盗取cookie（最频繁）<br>获取浏览器保存的明文密码<br>截取网页屏幕<br>网页上的键盘记录<br>（4）XSS类型<br>反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻击）<br>存储型（提交的数据成功实现了xss，存入数据库，别人访问这个页面的时候就会自动触发）<br>DOM型<br>检测是否存在xss<br>一般是想办法让浏览器弹窗（alert）最经典的弹窗语句:<script>alert(1)</script><br>这里需要带有post或者get传参<br>xss执行的为JS语句，一般需要构建<script></script><br>其他方法<br>javascript:alert(1)（经典代码<a herf="javascript:alert(1)">test</a>）
+            <h4 id="1-XSS的原理和特性"><a href="#1-XSS的原理和特性" class="headerlink" title="1.XSS的原理和特性"></a>1.XSS的原理和特性</h4><p>（1）什么是XSS<br>就是HTML代码注入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（2）XSS主要拼接的什么<br>xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句<br>（3）XSS能做什么<br>盗取内网IP<br>盗取cookie（最频繁）<br>获取浏览器保存的明文密码<br>截取网页屏幕<br>网页上的键盘记录<br>（4）XSS类型<br>反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻击）<br>存储型（提交的数据成功实现了xss，存入数据库，别人访问这个页面的时候就会自动触发）<br>DOM型<br>检测是否存在xss<br>一般是想办法让浏览器弹窗（alert）最经典的弹窗语句:</p>
+<script>alert(1)</script>
+
+
+<p>这里需要带有post或者get传参<br>xss执行的为JS语句，一般需要构建<script></script><br>其他方法<br>javascript:alert(1)（经典代码<a herf="javascript:alert(1)">test</a>）
 javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实存在的协议，如http://,https://,ftp://<br>伪协议只有关联应能够用比如php:// tencent://（关联QQ）<br>javascript:伪协议实际上声明了URL的主体是任意的javascript代码<br>事件也是可以执行JS的：<br>例如：onerror=alert(1) 在加载文档或图像时发生错误<br>该句的意思是在加载文档或图像时发生错误然后会执行alert(1)<br>类似的事情有很多<br>常用的有 onerror,onload（成功加载执行）<br>oninput（有输入框，输入的时候触发）</p>
 <h4 id="2-反射型XSS靶场演示"><a href="#2-反射型XSS靶场演示" class="headerlink" title="2.反射型XSS靶场演示"></a>2.反射型XSS靶场演示</h4><p>先在XSS平台上注册一个账号，在项目创建选择默认和xss功能。</p>
 
@@ -452,7 +458,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/14/Oracle/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/06/14/Oracle/" class="post-title-link" itemprop="url">Oracle注入-报错注入</a>
               
             
           </h1>
@@ -477,7 +483,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
                 
               
 
-              <time title="Created: 2019-06-14 19:22:26 / Modified: 19:31:33" itemprop="dateCreated datePublished" datetime="2019-06-14T19:22:26+08:00">2019-06-14</time>
+              <time title="Created: 2019-06-14 19:22:26 / Modified: 19:37:35" itemprop="dateCreated datePublished" datetime="2019-06-14T19:22:26+08:00">2019-06-14</time>
             
 
             
@@ -518,8 +524,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
       
         
           
-            <hr>
-<h2 id="title-Oracle注入-报错注入"><a href="#title-Oracle注入-报错注入" class="headerlink" title="title:Oracle注入-报错注入"></a>title:Oracle注入-报错注入</h2><h4 id="1-注入函数解析"><a href="#1-注入函数解析" class="headerlink" title="1.注入函数解析"></a>1.注入函数解析</h4><p>Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual<br>（1）Dual是一个为了满足查询结构而产生的虚表<br>（2）Oracle中如何查询表名和字段名<br>（3）rownum = 1（只返回一条数据）<br>     rownum &lt; 3 返回两条<br>（4）可以通过&lt;&gt;来遍历内容<br>    AND A&lt;&gt;’A’成立了才会执行该语句<br>select * from admin where id &lt;&gt; ‘1’<br>从第一条数据开始遍历到最后一条<br><img src="/.com//8.png" alt><br>and 字段名 &lt;&gt; 字段值（一个条件，查询时排除符合条件的数据，当字段名中字段值符合数据就排除这个条件的数据）<br>CTXSYS.DRITHSX.SN(user,(select banner from v$version where rownum = 1))<br>去查询关于主题的对应关键词，然后因为查询失败，因为这个用户没有创建和查询的权限，默认情况没有创建，爆出未查询到的错误从而爆出查询内容。</p>
+            <h4 id="1-注入函数解析"><a href="#1-注入函数解析" class="headerlink" title="1.注入函数解析"></a>1.注入函数解析</h4><p>Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual<br>（1）Dual是一个为了满足查询结构而产生的虚表<br>（2）Oracle中如何查询表名和字段名<br>（3）rownum = 1（只返回一条数据）<br>     rownum &lt; 3 返回两条<br>（4）可以通过&lt;&gt;来遍历内容<br>    AND A&lt;&gt;’A’成立了才会执行该语句<br>select * from admin where id &lt;&gt; ‘1’<br>从第一条数据开始遍历到最后一条<br><img src="/.com//8.png" alt><br>and 字段名 &lt;&gt; 字段值（一个条件，查询时排除符合条件的数据，当字段名中字段值符合数据就排除这个条件的数据）<br>CTXSYS.DRITHSX.SN(user,(select banner from v$version where rownum = 1))<br>去查询关于主题的对应关键词，然后因为查询失败，因为这个用户没有创建和查询的权限，默认情况没有创建，爆出未查询到的错误从而爆出查询内容。</p>
 <h4 id="2-报错注入-联合注入"><a href="#2-报错注入-联合注入" class="headerlink" title="2.报错注入+联合注入"></a>2.报错注入+联合注入</h4><p>输入select * admin where id=9.99 union all select null null null table_name user_tables<br>最后一个爆出表名<br>select * from user_tab_colums<br>查当前数据库<br>select * from user_tab_colums where table name=’ADMIN’<br>爆出字段名<br>将字段名放入<br>select * from admin where id=9.99 union all select null,null,null,COLUMN_NAME from user_tab_columns where table_name = ‘ADMIN’<br>条件中的大小写是需要区别的</p>
 
           
@@ -597,7 +602,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/14/反弹注入/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/06/14/反弹注入/" class="post-title-link" itemprop="url">MSSSQL注入</a>
               
             
           </h1>
@@ -622,7 +627,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
                 
               
 
-              <time title="Created: 2019-06-14 19:17:27 / Modified: 19:31:52" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:27+08:00">2019-06-14</time>
+              <time title="Created: 2019-06-14 19:17:27 / Modified: 19:38:00" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:27+08:00">2019-06-14</time>
             
 
             
@@ -663,8 +668,7 @@ javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实
       
         
           
-            <hr>
-<h2 id="title-MSSSQL注入"><a href="#title-MSSSQL注入" class="headerlink" title="title:MSSSQL注入"></a>title:MSSSQL注入</h2><h4 id="1-MSSQL反弹注入使用场景"><a href="#1-MSSQL反弹注入使用场景" class="headerlink" title="1.MSSQL反弹注入使用场景"></a>1.MSSQL反弹注入使用场景</h4><p><strong>前言</strong><br>MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。<br>MSSQL反弹注入<br>明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是使用反弹注入技术，而反弹注入技术则需依靠opendatasource函数支持。</p>
+            <h4 id="1-MSSQL反弹注入使用场景"><a href="#1-MSSQL反弹注入使用场景" class="headerlink" title="1.MSSQL反弹注入使用场景"></a>1.MSSQL反弹注入使用场景</h4><p><strong>前言</strong><br>MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。<br>MSSQL反弹注入<br>明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是使用反弹注入技术，而反弹注入技术则需依靠opendatasource函数支持。</p>
 <h4 id="2-快速搭建一个MSSQL环境（骚姿势）"><a href="#2-快速搭建一个MSSQL环境（骚姿势）" class="headerlink" title="2.快速搭建一个MSSQL环境（骚姿势）"></a>2.快速搭建一个MSSQL环境（骚姿势）</h4><p>在香港云上（<a href="http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器" target="_blank" rel="noopener">http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器</a><br>步骤：创建主机，创建数据库，连入数据库，创建表<br>号外 MSSQL显错注入<br>以联合查询为例子，首先猜字段，联合查询，要写union all ，然后猜输出点要使用NULL填充，注释只有–（不要用#）<br>select name from master.dbo.sysdatabases 查询系统库<br>dbo.sysobjects 查询系统表（xtype=’U’）<br>dbo.syscolumnsz字段（id=）指定id<br>%23为#是MySQL特有的注释</p>
 <h4 id="3-MSSQL反弹注入语句解析"><a href="#3-MSSQL反弹注入语句解析" class="headerlink" title="3.MSSQL反弹注入语句解析"></a>3.MSSQL反弹注入语句解析</h4><h4 id="4-MSSQL反弹靶场分析"><a href="#4-MSSQL反弹靶场分析" class="headerlink" title="4.MSSQL反弹靶场分析"></a>4.MSSQL反弹靶场分析</h4><p>mssql的注释为–很多数据库通吃<br>直接在连接后加–<br>报错，可以猜测是否为闭合问题<br>于是我在–前面加上一个单引号<br><img src="/.com//11.png" alt="语句"><br>页面恢复正常， 说明我们将前面的语句闭合，后面的语句注释，那么中间就是可以发挥的地方<br>用oeder by 语句查询<br>猜出字段后联合查询<br>union select 1,2,3 from admin<br>页面无回显<br>这是mssql的区别<br>正确语句为<br>union all select null,null,null<br>他不能以数字填充，需要用字符串<br>select name from master.dbo.sysdatabases<br>查询库<br>在查询字段得以爆出flag</p>
 
