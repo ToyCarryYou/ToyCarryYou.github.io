@@ -96,17 +96,19 @@
 
 
 
-  <meta name="description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+  <meta name="description" content="title:MSSSQL注入1.MSSQL反弹注入使用场景前言MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。MSSQL反弹注入明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="盲注">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/盲注/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/反弹注入/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+<meta property="og:description" content="title:MSSSQL注入1.MSSQL反弹注入使用场景前言MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。MSSQL反弹注入明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-31T11:13:55.372Z">
+<meta property="og:image" content="http://yoursite.com/.com//11.png">
+<meta property="og:updated_time" content="2019-06-14T11:18:24.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="盲注">
-<meta name="twitter:description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title:MSSSQL注入1.MSSQL反弹注入使用场景前言MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。MSSQL反弹注入明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是">
+<meta name="twitter:image" content="http://yoursite.com/.com//11.png">
 
 
 
@@ -114,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/31/盲注/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/14/反弹注入/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>盲注 | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -289,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/盲注/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/反弹注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">盲注
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -332,9 +334,13 @@
                 
               
 
-              <time title="Created: 2019-05-31 19:13:55" itemprop="dateCreated datePublished" datetime="2019-05-31T19:13:55+08:00">2019-05-31</time>
+              <time title="Created: 2019-06-14 19:17:27 / Modified: 19:18:24" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:27+08:00">2019-06-14</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -367,10 +373,10 @@
       
 
       
-        <p>####1.盲注介绍<br>所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。</p>
-<p><strong>布尔盲注</strong><br>布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息</p>
-<p><strong>时间盲注</strong><br>界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确</p>
-<p>####2.盲注需要掌握的几个函数<br>length()函数 返回字符串的长度<br>select length(‘Hello’)<br>返回值5<br>substr()截取字符串（语法：SUBSTR(str,pos,len);）<br>select substr(‘hello’,2,1)<br>将截取hello，从哪一位开始截取（负数则从后往前截取），截取长度<br>返回值e<br>若截取值超过则将全显<br>ascii()返回字符串的ascii码<br>sleep()将程序挂一段时间n为n秒<br>select ascii(‘a’) and sleep(10)<br>if(expr1,expr2,expr3)判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句<br>先判断数据库字符串长度，再用ascii码截取每一个字符，根据最终判定的ascii码确定字母，依次得出库名<br>或者用burp的爆破功能</p>
+        <hr>
+<h2 id="title-MSSSQL注入"><a href="#title-MSSSQL注入" class="headerlink" title="title:MSSSQL注入"></a>title:MSSSQL注入</h2><h4 id="1-MSSQL反弹注入使用场景"><a href="#1-MSSQL反弹注入使用场景" class="headerlink" title="1.MSSQL反弹注入使用场景"></a>1.MSSQL反弹注入使用场景</h4><p><strong>前言</strong><br>MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。<br>MSSQL反弹注入<br>明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是使用反弹注入技术，而反弹注入技术则需依靠opendatasource函数支持。</p>
+<h4 id="2-快速搭建一个MSSQL环境（骚姿势）"><a href="#2-快速搭建一个MSSQL环境（骚姿势）" class="headerlink" title="2.快速搭建一个MSSQL环境（骚姿势）"></a>2.快速搭建一个MSSQL环境（骚姿势）</h4><p>在香港云上（<a href="http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器" target="_blank" rel="noopener">http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器</a><br>步骤：创建主机，创建数据库，连入数据库，创建表<br>号外 MSSQL显错注入<br>以联合查询为例子，首先猜字段，联合查询，要写union all ，然后猜输出点要使用NULL填充，注释只有–（不要用#）<br>select name from master.dbo.sysdatabases 查询系统库<br>dbo.sysobjects 查询系统表（xtype=’U’）<br>dbo.syscolumnsz字段（id=）指定id<br>%23为#是MySQL特有的注释</p>
+<h4 id="3-MSSQL反弹注入语句解析"><a href="#3-MSSQL反弹注入语句解析" class="headerlink" title="3.MSSQL反弹注入语句解析"></a>3.MSSQL反弹注入语句解析</h4><h4 id="4-MSSQL反弹靶场分析"><a href="#4-MSSQL反弹靶场分析" class="headerlink" title="4.MSSQL反弹靶场分析"></a>4.MSSQL反弹靶场分析</h4><p>mssql的注释为–很多数据库通吃<br>直接在连接后加–<br>报错，可以猜测是否为闭合问题<br>于是我在–前面加上一个单引号<br><img src="/.com//11.png" alt="语句"><br>页面恢复正常， 说明我们将前面的语句闭合，后面的语句注释，那么中间就是可以发挥的地方<br>用oeder by 语句查询<br>猜出字段后联合查询<br>union select 1,2,3 from admin<br>页面无回显<br>这是mssql的区别<br>正确语句为<br>union all select null,null,null<br>他不能以数字填充，需要用字符串<br>select name from master.dbo.sysdatabases<br>查询库<br>在查询字段得以爆出flag</p>
 
       
     </div>
@@ -401,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/postHead注入/" rel="next" title="POST,Head注入">
-                <i class="fa fa-chevron-left"></i> POST,Head注入
+              <a href="/2019/06/04/MySQL注入-DNS注入/" rel="next" title="MySQL注入-DNS注入">
+                <i class="fa fa-chevron-left"></i> MySQL注入-DNS注入
               </a>
             
           </div>
@@ -411,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/03/宽字节注入/" rel="prev" title="宽字节注入">
-                宽字节注入 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/14/Oracle/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -457,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -504,6 +519,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-MSSSQL注入"><span class="nav-number">1.</span> <span class="nav-text">title:MSSSQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-MSSQL反弹注入使用场景"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.MSSQL反弹注入使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-快速搭建一个MSSQL环境（骚姿势）"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.快速搭建一个MSSQL环境（骚姿势）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-MSSQL反弹注入语句解析"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.MSSQL反弹注入语句解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-MSSQL反弹靶场分析"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.MSSQL反弹靶场分析</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

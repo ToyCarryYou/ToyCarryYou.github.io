@@ -96,17 +96,19 @@
 
 
 
-  <meta name="description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+  <meta name="description" content="title:Oracle注入-报错注入1.注入函数解析Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual（1）Dual">
 <meta property="og:type" content="article">
-<meta property="og:title" content="盲注">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/盲注/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/Oracle/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+<meta property="og:description" content="title:Oracle注入-报错注入1.注入函数解析Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual（1）Dual">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-31T11:13:55.372Z">
+<meta property="og:image" content="http://yoursite.com/.com//8.png">
+<meta property="og:updated_time" content="2019-06-14T11:22:27.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="盲注">
-<meta name="twitter:description" content="####1.盲注介绍所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。 布尔盲注布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息 时间盲注界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确 ####2.盲注需要掌握的几个函数length()函数 返回字符串的长度select length(‘Hell">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title:Oracle注入-报错注入1.注入函数解析Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual（1）Dual">
+<meta name="twitter:image" content="http://yoursite.com/.com//8.png">
 
 
 
@@ -114,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/31/盲注/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/14/Oracle/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>盲注 | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -289,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/盲注/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/Oracle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -306,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">盲注
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -332,9 +334,13 @@
                 
               
 
-              <time title="Created: 2019-05-31 19:13:55" itemprop="dateCreated datePublished" datetime="2019-05-31T19:13:55+08:00">2019-05-31</time>
+              <time title="Created: 2019-06-14 19:22:26 / Modified: 19:22:27" itemprop="dateCreated datePublished" datetime="2019-06-14T19:22:26+08:00">2019-06-14</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -367,10 +373,9 @@
       
 
       
-        <p>####1.盲注介绍<br>所谓盲注就是在服务器没有错误回显的时候完成的注入攻击。</p>
-<p><strong>布尔盲注</strong><br>布尔会根据你的注入信息返回Ture跟Fales，但没有报错信息</p>
-<p><strong>时间盲注</strong><br>界面返回值只有T，无论输入任何值，返回情况都会按照正常处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入语句是否正确</p>
-<p>####2.盲注需要掌握的几个函数<br>length()函数 返回字符串的长度<br>select length(‘Hello’)<br>返回值5<br>substr()截取字符串（语法：SUBSTR(str,pos,len);）<br>select substr(‘hello’,2,1)<br>将截取hello，从哪一位开始截取（负数则从后往前截取），截取长度<br>返回值e<br>若截取值超过则将全显<br>ascii()返回字符串的ascii码<br>sleep()将程序挂一段时间n为n秒<br>select ascii(‘a’) and sleep(10)<br>if(expr1,expr2,expr3)判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句<br>先判断数据库字符串长度，再用ascii码截取每一个字符，根据最终判定的ascii码确定字母，依次得出库名<br>或者用burp的爆破功能</p>
+        <hr>
+<h2 id="title-Oracle注入-报错注入"><a href="#title-Oracle注入-报错注入" class="headerlink" title="title:Oracle注入-报错注入"></a>title:Oracle注入-报错注入</h2><h4 id="1-注入函数解析"><a href="#1-注入函数解析" class="headerlink" title="1.注入函数解析"></a>1.注入函数解析</h4><p>Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual<br>（1）Dual是一个为了满足查询结构而产生的虚表<br>（2）Oracle中如何查询表名和字段名<br>（3）rownum = 1（只返回一条数据）<br>     rownum &lt; 3 返回两条<br>（4）可以通过&lt;&gt;来遍历内容<br>    AND A&lt;&gt;’A’成立了才会执行该语句<br>select * from admin where id &lt;&gt; ‘1’<br>从第一条数据开始遍历到最后一条<br><img src="/.com//8.png" alt><br>and 字段名 &lt;&gt; 字段值（一个条件，查询时排除符合条件的数据，当字段名中字段值符合数据就排除这个条件的数据）<br>CTXSYS.DRITHSX.SN(user,(select banner from v$version where rownum = 1))<br>去查询关于主题的对应关键词，然后因为查询失败，因为这个用户没有创建和查询的权限，默认情况没有创建，爆出未查询到的错误从而爆出查询内容。</p>
+<h4 id="2-报错注入-联合注入"><a href="#2-报错注入-联合注入" class="headerlink" title="2.报错注入+联合注入"></a>2.报错注入+联合注入</h4><p>输入select * admin where id=9.99 union all select null null null table_name user_tables<br>最后一个爆出表名<br>select * from user_tab_colums<br>查当前数据库<br>select * from user_tab_colums where table name=’ADMIN’<br>爆出字段名<br>将字段名放入<br>select * from admin where id=9.99 union all select null,null,null,COLUMN_NAME from user_tab_columns where table_name = ‘ADMIN’<br>条件中的大小写是需要区别的</p>
 
       
     </div>
@@ -401,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/31/postHead注入/" rel="next" title="POST,Head注入">
-                <i class="fa fa-chevron-left"></i> POST,Head注入
+              <a href="/2019/06/14/反弹注入/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -411,8 +416,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/03/宽字节注入/" rel="prev" title="宽字节注入">
-                宽字节注入 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/14/XSS原理与解析/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -457,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -504,6 +518,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-Oracle注入-报错注入"><span class="nav-number">1.</span> <span class="nav-text">title:Oracle注入-报错注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-注入函数解析"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.注入函数解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-报错注入-联合注入"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.报错注入+联合注入</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

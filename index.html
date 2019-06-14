@@ -286,6 +286,443 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/XSS原理与解析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/14/XSS原理与解析/" class="post-title-link" itemprop="url">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-14 19:25:48 / Modified: 19:25:49" itemprop="dateCreated datePublished" datetime="2019-06-14T19:25:48+08:00">2019-06-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-XSS的原理与解析"><a href="#title-XSS的原理与解析" class="headerlink" title="title:XSS的原理与解析"></a>title:XSS的原理与解析</h2><h4 id="1-XSS的原理和特性"><a href="#1-XSS的原理和特性" class="headerlink" title="1.XSS的原理和特性"></a>1.XSS的原理和特性</h4><p>（1）什么是XSS<br>就是HTML代码注入<br>（2）XSS主要拼接的什么<br>xss主要拼接的事网页的HTML代码，一般而言我们是可以拼接出合适的HTML代码去执行恶意的JS语句<br>（3）XSS能做什么<br>盗取内网IP<br>盗取cookie（最频繁）<br>获取浏览器保存的明文密码<br>截取网页屏幕<br>网页上的键盘记录<br>（4）XSS类型<br>反射型（提交的数据成功的实现了XSS，但是仅仅对这次访问产生了影响，是非持久攻击）<br>存储型（提交的数据成功实现了xss，存入数据库，别人访问这个页面的时候就会自动触发）<br>DOM型<br>检测是否存在xss<br>一般是想办法让浏览器弹窗（alert）最经典的弹窗语句:<script>alert(1)</script><br>这里需要带有post或者get传参<br>xss执行的为JS语句，一般需要构建<script></script><br>其他方法<br>javascript:alert(1)（经典代码<a herf="javascript:alert(1)">test</a>）
+javascript实际上是一个伪协议<br>伪协议不同于因特网上所真实存在的协议，如http://,https://,ftp://<br>伪协议只有关联应能够用比如php:// tencent://（关联QQ）<br>javascript:伪协议实际上声明了URL的主体是任意的javascript代码<br>事件也是可以执行JS的：<br>例如：onerror=alert(1) 在加载文档或图像时发生错误<br>该句的意思是在加载文档或图像时发生错误然后会执行alert(1)<br>类似的事情有很多<br>常用的有 onerror,onload（成功加载执行）<br>oninput（有输入框，输入的时候触发）</p>
+<h4 id="2-反射型XSS靶场演示"><a href="#2-反射型XSS靶场演示" class="headerlink" title="2.反射型XSS靶场演示"></a>2.反射型XSS靶场演示</h4><p>先在XSS平台上注册一个账号，在项目创建选择默认和xss功能。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/Oracle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/14/Oracle/" class="post-title-link" itemprop="url">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-14 19:22:26 / Modified: 19:22:27" itemprop="dateCreated datePublished" datetime="2019-06-14T19:22:26+08:00">2019-06-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-Oracle注入-报错注入"><a href="#title-Oracle注入-报错注入" class="headerlink" title="title:Oracle注入-报错注入"></a>title:Oracle注入-报错注入</h2><h4 id="1-注入函数解析"><a href="#1-注入函数解析" class="headerlink" title="1.注入函数解析"></a>1.注入函数解析</h4><p>Dual是一个实表，如果直接查询，他只显示一个X，列名为DUMMY。他实际是为了满足查询语句的结构而产生的，比如你想查询你的用户名select user from Dual,调用系统函数：（获得随机值：select dbms_random.random from dual）,还能做加减法，select 9+1 from dual<br>（1）Dual是一个为了满足查询结构而产生的虚表<br>（2）Oracle中如何查询表名和字段名<br>（3）rownum = 1（只返回一条数据）<br>     rownum &lt; 3 返回两条<br>（4）可以通过&lt;&gt;来遍历内容<br>    AND A&lt;&gt;’A’成立了才会执行该语句<br>select * from admin where id &lt;&gt; ‘1’<br>从第一条数据开始遍历到最后一条<br><img src="/.com//8.png" alt><br>and 字段名 &lt;&gt; 字段值（一个条件，查询时排除符合条件的数据，当字段名中字段值符合数据就排除这个条件的数据）<br>CTXSYS.DRITHSX.SN(user,(select banner from v$version where rownum = 1))<br>去查询关于主题的对应关键词，然后因为查询失败，因为这个用户没有创建和查询的权限，默认情况没有创建，爆出未查询到的错误从而爆出查询内容。</p>
+<h4 id="2-报错注入-联合注入"><a href="#2-报错注入-联合注入" class="headerlink" title="2.报错注入+联合注入"></a>2.报错注入+联合注入</h4><p>输入select * admin where id=9.99 union all select null null null table_name user_tables<br>最后一个爆出表名<br>select * from user_tab_colums<br>查当前数据库<br>select * from user_tab_colums where table name=’ADMIN’<br>爆出字段名<br>将字段名放入<br>select * from admin where id=9.99 union all select null,null,null,COLUMN_NAME from user_tab_columns where table_name = ‘ADMIN’<br>条件中的大小写是需要区别的</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/反弹注入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/14/反弹注入/" class="post-title-link" itemprop="url">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-14 19:17:27 / Modified: 19:18:24" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:27+08:00">2019-06-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-MSSSQL注入"><a href="#title-MSSSQL注入" class="headerlink" title="title:MSSSQL注入"></a>title:MSSSQL注入</h2><h4 id="1-MSSQL反弹注入使用场景"><a href="#1-MSSQL反弹注入使用场景" class="headerlink" title="1.MSSQL反弹注入使用场景"></a>1.MSSQL反弹注入使用场景</h4><p><strong>前言</strong><br>MSSQL注入攻击是最为复杂的数据库攻击技术，由于该数据库功能十分强大，存储过程以及函数语句十分丰富，这些灵活的语句造就了新颖独特的攻击思路。<br>MSSQL反弹注入<br>明明是SQL的注入点却无法进行注入，注入等工具猜解的速度异常缓慢，错误提示关闭，无法返回注入结果等等，都是在注入攻击中常常遇到的问题。为了解决以上疑难杂症，比较好的解决方法就是使用反弹注入技术，而反弹注入技术则需依靠opendatasource函数支持。</p>
+<h4 id="2-快速搭建一个MSSQL环境（骚姿势）"><a href="#2-快速搭建一个MSSQL环境（骚姿势）" class="headerlink" title="2.快速搭建一个MSSQL环境（骚姿势）"></a>2.快速搭建一个MSSQL环境（骚姿势）</h4><p>在香港云上（<a href="http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器" target="_blank" rel="noopener">http://webweb.com）用十分钟邮箱（https://minutemail.net）注册一个服务器</a><br>步骤：创建主机，创建数据库，连入数据库，创建表<br>号外 MSSQL显错注入<br>以联合查询为例子，首先猜字段，联合查询，要写union all ，然后猜输出点要使用NULL填充，注释只有–（不要用#）<br>select name from master.dbo.sysdatabases 查询系统库<br>dbo.sysobjects 查询系统表（xtype=’U’）<br>dbo.syscolumnsz字段（id=）指定id<br>%23为#是MySQL特有的注释</p>
+<h4 id="3-MSSQL反弹注入语句解析"><a href="#3-MSSQL反弹注入语句解析" class="headerlink" title="3.MSSQL反弹注入语句解析"></a>3.MSSQL反弹注入语句解析</h4><h4 id="4-MSSQL反弹靶场分析"><a href="#4-MSSQL反弹靶场分析" class="headerlink" title="4.MSSQL反弹靶场分析"></a>4.MSSQL反弹靶场分析</h4><p>mssql的注释为–很多数据库通吃<br>直接在连接后加–<br>报错，可以猜测是否为闭合问题<br>于是我在–前面加上一个单引号<br><img src="/.com//11.png" alt="语句"><br>页面恢复正常， 说明我们将前面的语句闭合，后面的语句注释，那么中间就是可以发挥的地方<br>用oeder by 语句查询<br>猜出字段后联合查询<br>union select 1,2,3 from admin<br>页面无回显<br>这是mssql的区别<br>正确语句为<br>union all select null,null,null<br>他不能以数字填充，需要用字符串<br>select name from master.dbo.sysdatabases<br>查询库<br>在查询字段得以爆出flag</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/MySQL注入-DNS注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1292,485 +1729,13 @@ C段：确定ip的范围，然后对其段内的ip主机进行信息收集<br>�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/正则表达式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/正则表达式/" class="post-title-link" itemprop="url">正则表达式</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-31 18:53:38" itemprop="dateCreated datePublished" datetime="2019-05-31T18:53:38+08:00">2019-05-31</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>后端基础php-正则表达式<br>1.什么是正则表达式<br>正则表达式，又称规则表达式。（代码简写RE）通常被用来检索，替换符合某个模式（规则）的文本。<br>特点：<br>灵活性，逻辑性非常强；<br>可以迅速用极简单的方式达到字符串的复杂控制；<br>对于刚接触的人来说，比较晦涩难懂；<br>用途：<br>判断字符串是否符合某一规则（是否符合手机号，邮箱规则）。<br>从一个字符串中找出符合规则的所有子字符串（取HTML标签名）。<br>2.正则表达式的语法<br>3.php中的正则表达式</p>
-<p>#常用转义字符：<br>数字：\d<br>非数字：\D<br>空白字符（空格，制表符，换页符等）：\s<br>非空白字符：\S<br>制表符：\t<br>回车符：\r<br>换行符：\n<br>单词字符（26个英文字母+数字+下划线）：\w<br>非单词字符：\W</p>
-<p>#自定义字符结合<br>字符集合：[单个字符或字符区间]，用于匹配集合内字符<br>如：<br>[a-z]表示a-z这26个小写字母<br>[0-9a-z]表示0-9这10个数字和a-za26个小写字母<br>[135a-h]表示包含数字1，3，5和数字a-h这8个字母<br>注意：两个不同字符段间请勿使用.隔开<br>非集：[^单个字符或字符区间]，用于匹配非集合内字符。<br>如：<br>[^0-9]表示匹配所有非数字字符<br>[^a-zA-Z]表示匹配所有非字母字符<br>正则表达式语法-关键字<br>特别字符<br>元字符</p>
-<p>描述<br>\</p>
-<p>将下一个字符标记符、或一个向后引用、或一个八进制转义符。例如，“\n”匹配\n。“\n”匹配换行符。序列“\”匹配“\”而“(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。<br>^</p>
-<p>匹配输入字行首。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。<br>$</p>
-<p>匹配输入行尾。如果设置了RegExp对象的Multiline属性，$也匹配“\n”或“\r”之前的位置。<br>*</p>
-<p>匹配前面的子表达式任意次。例如，zo<em>能匹配“z”，也能匹配“zo”以及“zoo”。</em>等价于{0,}。<br>+</p>
-<p>匹配前面的子表达式一次或多次(大于等于1次）。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于{1,}。<br>?</p>
-<p>匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“do”或“does”。?等价于{0,1}。<br>{n}</p>
-<p>n是一个非负整数。匹配确定的n次。例如，“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。<br>{n,}</p>
-<p>n是一个非负整数。至少匹配n次。例如，“o{2,}”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o{1,}”等价于“o+”。“o{0,}”则等价于“o*”。<br>{n,m}</p>
-<p>m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o为一组，后三个o为一组。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。<br>?</p>
-<p>当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少地匹配所搜索的字符串，而默认的贪婪模式则尽可能多地匹配所搜索的字符串。例如，对于字符串“oooo”，“o+”将尽可能多地匹配“o”，得到结果[“oooo”]，而“o+?”将尽可能少地匹配“o”，得到结果 [‘o’, ‘o’, ‘o’, ‘o’]<br>.点</p>
-<p>匹配除“\n”和”\r”之外的任何单个字符。要匹配包括“\n”和”\r”在内的任何字符，请使用像“[\s\S]”的模式。<br>(pattern)</p>
-<p>匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“(”或“)”。<br>(?:pattern)</p>
-<p>非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分时很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。<br>(?=pattern)</p>
-<p>非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。<br>(?!pattern)</p>
-<p>非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。<br>(?&lt;=pattern)</p>
-<p>非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。<br>*python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等<br>(?&lt;!patte_n)</p>
-<p>非获取匹配，反向否定预查，与正向否定预查类似，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。<br>*python的正则表达式没有完全按照正则表达式规范实现，所以一些高级特性建议使用其他语言如java、scala等<br>x|y</p>
-<p>匹配x或y。例如，“z|food”能匹配“z”或“food”(此处请谨慎)。“[z|f]ood”则匹配“zood”或“food”。<br>[xyz]</p>
-<p>字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。<br>[^xyz]</p>
-<p>负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“plin”任一字符。<br>[a-z]</p>
-<p>字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。<br>注意:只有连字符在字符组内部时,并且出现在两个字符之间时,才能表示字符的范围; 如果出字符组的开头,则只能表示连字符本身.<br>[^a-z]</p>
-<p>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。<br>\b</p>
-<p>匹配一个单词的边界，也就是指单词和空格间的位置（即正则表达式的“匹配”有两种概念，一种是匹配字符，一种是匹配位置，这里的\b就是匹配位置的）。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”；“\b1_”可以匹配“1_23”中的“1_”，但不能匹配“21_3”中的“1_”。<br>\B</p>
-<p>匹配非单词边界。“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。<br>\cx</p>
-<p>匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。<br>\d</p>
-<p>匹配一个数字字符。等价于[0-9]。grep 要加上-P，perl正则支持<br>\D</p>
-<p>匹配一个非数字字符。等价于[^0-9]。grep要加上-P，perl正则支持<br>\f</p>
-<p>匹配一个换页符。等价于\x0c和\cL。<br>\n</p>
-<p>匹配一个换行符。等价于\x0a和\cJ。<br>\r</p>
-<p>匹配一个回车符。等价于\x0d和\cM。<br>\s</p>
-<p>匹配任何不可见字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。<br>\S</p>
-<p>匹配任何可见字符。等价于[^ \f\n\r\t\v]。<br>\t</p>
-<p>匹配一个制表符。等价于\x09和\cI。<br>\v</p>
-<p>匹配一个垂直制表符。等价于\x0b和\cK。<br>\w</p>
-<p>匹配包括下划线的任何单词字符。类似但不等价于“[A-Za-z0-9_]”，这里的”单词”字符使用Unicode字符集。<br>\W</p>
-<p>匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。<br>\xn</p>
-<p>匹配n，其中n为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“\x41”匹配“A”。“\x041”则等价于“\x04&amp;1”。正则表达式中可以使用ASCII编码。<br>\num</p>
-<p>匹配num，其中num是一个正整数。对所获取的匹配的引用。例如，“(.)\1”匹配两个连续的相同字符。<br>\n</p>
-<p>标识一个八进制转义值或一个向后引用。如果\n之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。<br>\nm</p>
-<p>标识一个八进制转义值或一个向后引用。如果\nm之前至少有nm个获得子表达式，则nm为向后引用。如果\nm之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则\nm将匹配八进制转义值nm。<br>\nml</p>
-<p>如果n为八进制数字（0-7），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。<br>\un</p>
-<p>匹配n，其中n是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（&copy;）。<br>\p{P}</p>
-<p>小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。中括号内的“P”表示Unicode 字符集七个字符属性之一：标点字符。<br>其他六个属性：<br>L：字母；<br>M：标记符号（一般不会单独出现）；<br>Z：分隔符（比如空格、换行等）；<br>S：符号（比如数学符号、货币符号等）；<br>N：数字（比如阿拉伯数字、罗马数字等）；<br>C：其他字符。<br>*注：此语法部分语言不支持，例：javascript。<br>&lt;<br>&gt;<br>    匹配词（word）的开始（&lt;）和结束（&gt;）。例如正则表达式&lt;the&gt;能够匹配字符串”for the wise”中的”the”，但是不能匹配字符串”otherwise”中的”the”。注意：这个元字符不是所有的软件都支持的。<br>( )    将( 和 ) 之间的表达式定义为“组”（group），并且将匹配这个表达式的字符保存到一个临时区域（一个正则表达式中最多可以保存9个），它们可以用 \1 到\9 的符号来引用。<br>|    将两个匹配条件进行逻辑“或”（Or）运算。例如正则表达式(him|her) 匹配”it belongs to him”和”it belongs to her”，但是不能匹配”it belongs to them.”。注意：这个元字符不是所有的软件都支持的。</p>
-<p>#php中使用正则一定要加/<br>python与java不需要</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/php后端表单验证/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/php后端表单验证/" class="post-title-link" itemprop="url">php后端表单验证</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-31 18:49:54" itemprop="dateCreated datePublished" datetime="2019-05-31T18:49:54+08:00">2019-05-31</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.什么是表单？<br>负责数据采集功能<br>三个基本-表单标签<br>        -表单域<br>        -表单控制<br>2.表单属性<br>属性         值         描述<br>action       URL        表单提交目的地<br>method       GET        最佳性，内容短，URL直显<br>             POST       性能低，内容多，无直接显示<br>target       _blank     新窗口打开<br>             _self      默认，同框架打开<br>             _parent    父框架打开<br>             _top       整窗口打开<br>3.语法解析<br>var_dump：查看变量并返回值<br>die()：输出一条消息并退出当前脚本<br>strlen：判断字符串长度是否为0<br>mysqli_query：执行语句<br>mysqli_fetch：遍历语句</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/31/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-31 17:32:35" itemprop="dateCreated datePublished" datetime="2019-05-31T17:32:35+08:00">2019-05-31</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1810,7 +1775,7 @@ C段：确定ip的范围，然后对其段内的ip主机进行信息收集<br>�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
